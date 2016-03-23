@@ -17,14 +17,15 @@ $q3=$_POST['q3'];
 $prevIter=$_SESSION['prevIter'];
 
 # Close previous 
-$c1="UPDATE $table_name SET `status`='complete'
+$c1="UPDATE ".$table_name." SET `status`='complete'
  WHERE `id` = '$id' AND `iter` = '$prevIter' AND `exp_id` = '$exp_id' AND `status` = 'claimed'";
 echo $c1;
 mysql_query($c1);
 
 # Set current 
 $iter=$_SESSION['iter'];
-$c1="INSERT INTO $table_name (subj,exp_id,claimed,iter,art_id,article,q1_t,q2_t,q3_t,q1_r,q2_r,q3_r,pass_along,status) VALUES	('$subj','$exp_id',$id,$iter,$art_id,'$article','$qs[0]','$qs[1]','$qs[2]','$q1','$q2','$q3',$pass_along,'wait')";
+$article2=addslashes($article);
+$c1="INSERT INTO ".$table_name." (subj,exp_id,claimed,iter,art_id,article,q1_t,q2_t,q3_t,q1_r,q2_r,q3_r,pass_along,status) VALUES	('$subj','$exp_id',$id,$iter,$art_id,'$article2','$qs[0]','$qs[1]','$qs[2]','$q1','$q2','$q3',$pass_along,'wait')";
 echo $c1;
 mysql_query($c1);
 

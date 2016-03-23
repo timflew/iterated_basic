@@ -1,3 +1,0 @@
-id,article,w1,w2,w3,pass_along
-0,'This word %s and this word %s will stay the same. This one will change %s','hello','sad','dog',3
-1,'This word changes %s but the last two stay the same %s %s','goodbye','happy','cat',1

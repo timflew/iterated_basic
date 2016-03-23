@@ -30,15 +30,19 @@ include('config.php');
     </form>
     <br><br>
     <form action="clearUnused.php" method="post">
-        <input type="submit" id="submit" value="Clear Subjects Past Time Limit" >
+        <input type="submit" id="submit" value="Clear Subjects Past Time Limit (><?php echo $time_lim?> mins)" >
     </form>
     
     <br><br>
-    <p> DON'T SELECT THIS UNLESS YOU'RE REALLY SURE</p>
-    <form action="create_initial_news_Fill.php" method="post">
-        <input type="submit" id="submit" value="Create Trials" >
+    <p>The following two buttons will 1) Create a new table in your specific database and 2) Fill that table with initial seed trials. Use carefully.</p>
+    <form action="create_initial_news_Table.php" method="post">
+        <input type="submit" id="submit" value="Create Table" >
     </form>
-    <p> This will fill the datatable with new initial seed trials</p>
+	<br>
+	<form action="create_initial_news_Fill.php" method="post">
+        <input type="submit" id="submit" value="Create Seed Trials" >
+    </form>
+
     
 </div>
 <link rel="stylesheet" type="text/css" href="ltmClus1.css" />

@@ -5,7 +5,7 @@ include('config.php');
 
 $subjId=$_GET['subjId'];
 
-$unclaimed="SELECT `iter`,`id` FROM `$table_name` WHERE `exp_id` = '$exp_id' AND `status` = 'wait'";
+$unclaimed="SELECT `iter`,`id` FROM ".$table_name." WHERE `exp_id` = '$exp_id' AND `status` = 'wait' AND `iter`<$iter_lim";
 
 $unclaimedData = mysql_query($unclaimed) or die(mysql_error());
 
@@ -26,11 +26,11 @@ if(!empty($row)){
 	$_SESSION['subj']=$subjId;
 	$cTime=date('Y-m-d H:i:s');
 
-	$c1="UPDATE `$table_name` SET `status`='claimed',`claim_time`='$cTime',`claimed_by`='$subjId'
+	$c1="UPDATE ".$table_name." SET `status`='claimed',`claim_time`='$cTime',`claimed_by`='$subjId'
 	 WHERE `id` = '$id' AND `iter` = '$prevIter' AND `exp_id` = '$exp_id' AND `status` = 'wait'";
 	mysql_query($c1);
 
-	$c1="INSERT INTO `$table_name` (subj,claimed,status,exp_id) VALUES('$subjId',$id,'init','$exp_id')";
+	$c1="INSERT INTO ".$table_name." (subj,claimed,status,exp_id) VALUES('$subjId',$id,'init','$exp_id')";
 	mysql_query($c1);
 		
 

@@ -13,7 +13,7 @@ include('config.php');
 
 <link rel="stylesheet" type="text/css" href="ltmClus1.css" />
 
-<h1>Log In--Like this post?</h1>
+<h1>Log In</h1>
 
 <div style="margin-left:25%;margin-right: 25%;width:50%;float:left;margin-top: 1%" align="center">
     <h2> Please insert ID </h2>

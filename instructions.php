@@ -8,7 +8,7 @@ $iter=$_SESSION['iter'];
 
 // Get trials
 $c1="SELECT `art_id`,`article`, `q1_t`, `q2_t`,`q3_t`, `q1_r`, `q2_r`,`q3_r`,`pass_along` FROM 
-	`$table_name` WHERE `id` = '$id' AND `status` = 'claimed' AND `iter` = '$prevIter' AND `exp_id` = '$exp_id'";
+	".$table_name." WHERE `id` = '$id' AND `status` = 'claimed' AND `iter` = '$prevIter' AND `exp_id` = '$exp_id'";
 echo $c1;
 $news_sql = mysql_query($c1) or die(mysql_error());
 $news_data = mysql_fetch_array($news_sql);
@@ -25,7 +25,7 @@ for($i=1;$i<4;$i++){
 		array_push($qs,$curr_stim);
 	}
 }
-
+print_r($qs);
 // Add code to load questions for this particular article
 $questions=array();
 $row = 1;
@@ -65,9 +65,9 @@ $_SESSION['pass_along']=$news_data['pass_along'];
 
 <h2>Instructions</h2>
 	
-	<p>We're trying to test how memorable Facebook posts are</p>
+	<p>We're trying to test how memorable sentences posts are</p>
 	<br>
-	<p>Each trial we will show you a Facebook post for a short time. Then the post will disappear and soon afterwards we will ask you questions about the post.</p>
+	<p>Each trial we will show you a sentence for a short time. Then the sentence will disappear and we will ask you questions about the sentence.</p>
 
 	<form action="trial.php" method="post">
 		<br>

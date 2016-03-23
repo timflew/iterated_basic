@@ -5,7 +5,7 @@ include('config.php');
 $subj=$_POST['subjId'];
 
 # Unclaim previous 
-$c1="UPDATE `$table_name` SET `status`='wait',`claimed_by`='',`claim_time`=''
+$c1="UPDATE ".$table_name." SET `status`='wait',`claimed_by`='',`claim_time`=''
  WHERE `claimed_by` = '$subj' AND `exp_id` = '$exp_id' AND `status` = 'claimed'";
 
 mysql_query($c1);

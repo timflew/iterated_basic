@@ -2,7 +2,7 @@
 include('config.php');
 
 // Check for completed iteration
-$in_pro_sql="SELECT DISTINCT `claimed_by`,`claim_time` FROM `$table_name` WHERE `status` = 'claimed' AND `exp_id` = '$exp_id'";
+$in_pro_sql="SELECT DISTINCT `claimed_by`,`claim_time` FROM ".$table_name." WHERE `status` = 'claimed' AND `exp_id` = '$exp_id'";
 $inpro=mysql_query($in_pro_sql);
 
 $row = mysql_fetch_array($inpro);

@@ -1,3 +1,3 @@
-article,q0,q1,q2,pass_along
-'Hello my name is %s and I want to ask %s: Do you make %s?','Alice','Bobby','Cake',2
-'Hello %s and I wanted to ask %s whether %s are tasty?','Dan','Egret','Donuts',1
+id,article,q0,q1,q2,pass_along
+0,"Hello my name\'s %s, and I want to ask %s: Do you make %s?",Alice,Bobby,Cake,2
+1,"Hello %s and I wanted to ask %s whether %s are \"tasty\"?",Dan,Egret,Donuts,1
